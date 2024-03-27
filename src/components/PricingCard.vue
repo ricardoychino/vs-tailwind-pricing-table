@@ -1,4 +1,6 @@
 <script setup>
+import CheckIcon from '@/components/CheckIcon.vue'
+
 defineProps({
   name: {
     type: String,
@@ -13,18 +15,19 @@ defineProps({
 </script>
 
 <template>
-  <div class="prose flex flex-col rounded-md shadow-lg p-4 basis-[300px] h-auto bg-white dark:bg-slate-700 dark:text-slate-100 dark:border dark:border-slate-600">
+  <div class="prose flex flex-col rounded-md box-border shadow-lg p-4 basis-[300px] h-auto border bg-white border-slate-50 dark:bg-slate-700 dark:text-slate-100 dark:border-slate-600">
     <h2 class="text-center dark:text-white">{{ name }}</h2>
     <p class="text-center font-light text-gray-400 dark:text-gray-500">{{ description }}</p>
     <div class="text-center my-2">
       <span class="font-bold text-4xl">${{ price }}</span>
       <span class="ml-2 text-md text-gray-400 dark:text-gray-500">/month</span>
     </div>
-    <ul class="mb-8">
+    <ul class="mb-8 p-0">
       <li v-for="feature in features"
         :key="`${name}-${feature}`"
-        class="text-sm mb-3"
+        class="flex items-center text-sm mb-3"
         >
+        <CheckIcon class="mr-1" />
         {{ feature }}
       </li>
     </ul>
