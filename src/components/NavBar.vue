@@ -1,11 +1,9 @@
 <script setup>
-import { ref } from 'vue'
 import { menu, dropdown } from '@/menu.json'
-import { BellIcon, Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
-import ToggleButton from './ToggleButton.vue'
-
-const menuOpen = ref(false)
-const dropdownOpen = ref(false)
+import { BellIcon } from '@heroicons/vue/24/outline'
+import ToggleButton from '@/components/ToggleButton.vue'
+import NavMenu from '@/components/navbar/NavMenu.vue'
+import ProfileMenu from '@/components/navbar/ProfileMenu.vue'
 </script>
 
 <template>
@@ -18,26 +16,7 @@ const dropdownOpen = ref(false)
       </div>
 
       <div class="order-1 flex">
-        <button
-          class="rounded-sm transition hover:!bg-gray-700 active:bg-gray-800 md:hidden"
-          @click="menuOpen = !menuOpen"
-        >
-          <Bars3Icon v-show="!menuOpen" />
-          <XMarkIcon v-show="menuOpen" />
-        </button>
-        <ul
-          class="absolute left-0 right-0 top-full flex flex-col bg-gray-800 md:relative md:!flex md:flex-row md:gap-2"
-          :class="{ hidden: !menuOpen }"
-        >
-          <li
-            v-for="(menuItem, i) in menu"
-            class="p-4 transition hover:!bg-gray-700 active:bg-gray-900 md:rounded-md md:py-2"
-            :class="{ active: i == 0 }"
-            :key="`menu-${menuItem.label}`"
-          >
-            <a :href="menuItem.route">{{ menuItem.label }}</a>
-          </li>
-        </ul>
+        <NavMenu :menu="menu" />
       </div>
 
       <div class="order-3 flex items-center gap-1 justify-self-end md:ml-auto md:gap-2">
@@ -47,36 +26,14 @@ const dropdownOpen = ref(false)
           </button>
           <ToggleButton />
         </div>
-        <div class="relative">
-          <a
-            class="block h-8 w-8 overflow-hidden rounded-full"
-            @click="dropdownOpen = !dropdownOpen"
-          >
-            <img src="@/assets/placeholder.jpg" alt="Profile picture" />
-          </a>
-          <ul
-            class="absolute right-0 top-8 w-auto whitespace-nowrap rounded-md bg-slate-100 text-sm text-gray-700 shadow-md dark:bg-slate-700 dark:text-slate-100"
-            v-show="dropdownOpen"
-          >
-            <li
-              v-for="dropdownItem in dropdown"
-              class="min-w-32 px-4 py-2"
-              :key="`dropdown-${dropdownItem.label.toLowerCase()}`"
-            >
-              <a :href="dropdownItem.route">{{ dropdownItem.label }}</a>
-            </li>
-          </ul>
-        </div>
+
+        <ProfileMenu :menu="dropdown" />
       </div>
     </div>
   </nav>
 </template>
 
 <style scoped>
-.active {
-  @apply bg-gray-900;
-}
-
 :deep(svg) {
   @apply h-6 w-6 text-slate-400 transition hover:text-inherit active:text-inherit;
 }
