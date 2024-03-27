@@ -9,7 +9,7 @@ const items = reactive(pricing)
 </script>
 
 <template>
-  <main class="w-[100vw] min-h-[100vh] py-10 bg-slate-100 text-slate-900">
+  <main class="w-[100vw] min-h-[100vh] py-10 bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-slate-100">
     <div class="mb-8 px-4 text-right">
       <ToggleButton />
     </div>

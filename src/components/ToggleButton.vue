@@ -8,7 +8,7 @@ const toggleDark = useToggle(isDarkMode)
 
 <template>
   <button 
-    class="p-1 rounded-md bg-slate-300 text-slate-800"
+    class="p-1 rounded-md bg-slate-200 text-slate-800 dark:bg-slate-700 dark:text-slate-200"
     @click="toggleDark()"><!-- Needs to include () - source: https://vueuse.org/shared/useToggle/#usetoggle -->
     <SunIcon class="toggle-icon" v-show="isDarkMode" />
     <MoonIcon class="toggle-icon" v-show="!isDarkMode" />

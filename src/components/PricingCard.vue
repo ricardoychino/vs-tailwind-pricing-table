@@ -13,12 +13,12 @@ defineProps({
 </script>
 
 <template>
-  <div class="prose flex flex-col bg-white rounded-md shadow-lg p-4 basis-[300px] h-auto">
-    <h2 class="text-center">{{ name }}</h2>
-    <p class="text-gray-400 text-center font-light ">{{ description }}</p>
+  <div class="prose flex flex-col rounded-md shadow-lg p-4 basis-[300px] h-auto bg-white dark:bg-slate-700 dark:text-slate-100 dark:border dark:border-slate-600">
+    <h2 class="text-center dark:text-white">{{ name }}</h2>
+    <p class="text-center font-light text-gray-400 dark:text-gray-500">{{ description }}</p>
     <div class="text-center my-2">
       <span class="font-bold text-4xl">${{ price }}</span>
-      <span class="text-gray-400 ml-2 text-md">/month</span>
+      <span class="ml-2 text-md text-gray-400 dark:text-gray-500">/month</span>
     </div>
     <ul class="mb-8">
       <li v-for="feature in features"
