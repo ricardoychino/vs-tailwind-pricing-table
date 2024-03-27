@@ -1,0 +1,34 @@
+{
+  "menu": [
+    {
+      "label": "Dashboard",
+      "route": "javascript:void(0)"
+    },
+    {
+      "label": "Team",
+      "route": "javascript:void(0)"
+    },
+    {
+      "label": "Projects",
+      "route": "javascript:void(0)"
+    },
+    {
+      "label": "Calendar",
+      "route": "javascript:void(0)"
+    }
+  ],
+  "dropdown": [
+    {
+      "label": "Your profile",
+      "route": "javascript:void(0)"
+    },
+    {
+      "label": "Settings",
+      "route": "javascript:void(0)"
+    },
+    {
+      "label": "Log out",
+      "route": "javascript:void(0)"
+    }
+  ]
+}
