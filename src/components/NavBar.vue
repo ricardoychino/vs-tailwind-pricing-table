@@ -7,7 +7,7 @@ import ProfileMenu from '@/components/navbar/ProfileMenu.vue'
 </script>
 
 <template>
-  <nav class="relative block bg-gray-800 text-slate-50">
+  <header class="relative block bg-gray-800 text-slate-50">
     <div class="container mx-auto grid h-20 grid-cols-3 items-center gap-4 px-4 py-4 md:flex">
       <div class="order-2 mx-auto justify-self-center md:order-1 md:mx-0">
         <a href="javascript: void(0)">
@@ -30,7 +30,7 @@ import ProfileMenu from '@/components/navbar/ProfileMenu.vue'
         <ProfileMenu :menu="dropdown" />
       </div>
     </div>
-  </nav>
+  </header>
 </template>
 
 <style scoped>
