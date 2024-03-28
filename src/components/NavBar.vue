@@ -19,7 +19,7 @@ import ProfileMenu from '@/components/navbar/ProfileMenu.vue'
         <NavMenu :menu="menu" />
       </div>
 
-      <div class="order-3 flex items-center gap-1 justify-self-end md:ml-auto md:gap-2">
+      <div class="order-3 flex items-center gap-2 justify-self-end md:ml-auto md:gap-2">
         <div class="flex items-center">
           <button>
             <BellIcon />

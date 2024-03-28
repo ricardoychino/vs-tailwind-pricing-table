@@ -10,7 +10,7 @@ const menuOpen = ref(false)
 <template>
   <nav>
     <button
-      class="rounded-sm transition hover:!bg-gray-700 active:bg-gray-800 md:hidden"
+      class="rounded-sm p-1 outline-1 outline-white transition hover:!bg-gray-700 focus:outline active:bg-gray-800 md:hidden"
       @click="menuOpen = !menuOpen"
     >
       <Bars3Icon v-show="!menuOpen" />
